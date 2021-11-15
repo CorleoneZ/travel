@@ -1,0 +1,60 @@
+server:
+  port: 8080
+  max-http-header-size: 102400 # 增加请求头的长度
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/travel?characterEncoding=utf-8&useSSL=true&serverTimezone=Asia/Shanghai
+    username: root
+    password: 123456
+
+    # druid 数据库连接池配置
+    druid-pool:
+      filters: stat
+      max-active: 8
+      initial-size: 4
+      max-wait: 60000
+      min-idle: 2
+      #连接合法性检查命令，如果不配置，则所有连接合法性检查都失效
+      validationQuery: SELECT 1
+      #合法性检查命令的执行超时时间（秒）
+      validationQueryTimeout: 5
+      #申请连接时执行合法性检查（生产环境禁止，影响性能）
+      testOnBorrow: false
+      #释放连接时执行合法性检查（生产环境禁止，影响性能）
+      testOnReturn: false
+      #执行空闲检查
+      testWhileIdle: true
+      #保持空闲而不被驱逐的空闲时间（毫秒）
+      minEvictableIdleTimeMillis: 300000
+      #执行sql前连接允许的空闲时间，如果超过该时间，会执行空闲检查（毫秒）
+      timeBetweenEvictionRunsMillis: 60000
+
+    # mybatis-plus配置
+    mybatis-plus:
+      type-enums-package: com.travel
+      configutation:
+        mapUnderscoreToCamelCase: true
+        # 关闭一级缓存 Mybatis一级缓存，默认为 SESSION
+        localCacheScope: STATEMENT
+        # 关闭二级缓存
+        cacheEnabled: false
+        # 结果集NULL映射规则：不映射
+        callSettersOnNulls: false
+      global-config:
+        db-config:
+          # 主键类型
+          idType: auto
+          # 逻辑删除字段
+          logicDeleteField: is_deleted
+          # 逻辑删除值
+          logicDeleteValue: 1
+          # 逻辑未删除
+          logicNotDeleteValue: 0
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    generate-ddl: true
