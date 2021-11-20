@@ -1,7 +1,6 @@
 package com.travel.controller.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.baomidou.mybatisplus.extension.api.R;
 import com.travel.controller.UserController;
 import com.travel.entity.User;
 import com.travel.exception.CodeEnum;
