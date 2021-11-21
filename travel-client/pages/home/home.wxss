@@ -1,0 +1,44 @@
+/* pages/article/article.wxss */
+#header{
+  width: 750rpx;
+  height: 311rpx;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  padding: 10rpx 16rpx;
+  height: 100vh;
+}
+
+swiper {
+  width: 100%;
+  height: 600rpx;
+  margin: 30rpx 0;
+}
+swiper image{
+  width:100%;
+  border-radius: 20rpx;
+}
+
+textarea {
+  width: 700rpx;
+  height: 200rpx;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+  margin-top: 10rpx;
+}
+
+.textarea-bg {
+  background-color: #ff00ff;
+  padding: 10rpx;
+  font-size: 32rpx;
+}
+
+.title-bg {
+  font-size: 32rpx;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+  margin-top: 10rpx;
+  color: #43c729;
+}

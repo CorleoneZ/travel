@@ -1,0 +1,30 @@
+<view class="page__hd">
+      <view class="page__title center">随机城市</view>
+
+      <view class="weui-cell__bd">
+          <input type='text' class="weui-input" name="name" value='{{Name}}'/>
+      </view>
+      <view class="weui-cell__bd">
+          <input type='text' class="weui-input" name="name" value='{{Description}}'/>
+      </view>
+      <view class="weui-cell__bd">
+          <input type='text' class="weui-input" name="name" value='{{Strategy}}'/>
+      </view>
+      
+      <view class="weui-article__p weui-panel__hd" wx:for='{{Scenic}}'>
+        <view class="page__bd page__bd_spacing">
+              <view class="page__desc center">
+                <view class="page__title">
+                  {{item.Name}}
+                </view>   
+                <view class="page__desc">
+                  {{item.Detail}} 
+                </view>  
+              </view>    
+        </view>
+      </view>
+
+      <view class="weui-cell__bd">
+          <input type='text' class="weui-input" name="name" value='{{Connection}}'/>
+      </view>
+  </view>

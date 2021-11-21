@@ -1,0 +1,17 @@
+
+<view class="page__hd">
+      <view class="page__title center">热门景点</view>
+
+      <view class="weui-article__p weui-panel__hd" wx:for='{{Secnic}}'>
+        <view class="page__bd page__bd_spacing">
+              <view class="page__desc center">
+                <view class="page__title">
+                  {{item.Name}}
+                </view>   
+                <view class="page__desc">
+                  {{item.Detail}} 
+                </view>  
+              </view>    
+        </view>
+      </view>
+  </view>

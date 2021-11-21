@@ -1,0 +1,73 @@
+<view class="page">
+    <!-- <view class="page__hd" id="top" style="background-image:url(/images/background.jpg);background-repeat: repeat-x;"> -->
+    <view class="page__hd">
+            <image class="user_img" src="{{userInfoAvatar}}"></image>
+         <view class="wraper">
+            <view class="user_name">{{nickName}}</view>
+         </view>
+    </view>
+
+    <view class="page__bd">
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell">
+                <view class="weui-cell__bd">
+                性别
+                </view>
+                <radio-group class="radio-group" bindchange="sexChange">
+                   <label class="radio" wx:for="{{sex}}">
+                      <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+                   </label>
+                </radio-group>
+            </view>
+
+
+            <view class="weui-cell">
+                <view class="weui-cell__bd">
+                体重
+                </view>
+                <picker bindchange="bindWeightChange" value="{{weight-40}}" range="{{array1}}" >
+                  <view class="picker">{{weight}} kg</view>
+                </picker>
+            </view>
+            <view class="weui-cell">
+                <view class="weui-cell__bd">
+                收缩压
+                </view>
+                <picker bindchange="bindsystolicChange" value="{{systolic-70}}" range="{{array2}}" >
+                  <view class="picker">{{systolic}} mmHg</view>
+                </picker>
+            </view>
+            <view class="weui-cell">
+                <view class="weui-cell__bd">
+                舒张压
+                </view>
+                <picker bindchange="binddiastolicChange" value="{{diastolic-50}}" range="{{array3}}" >
+                  <view class="picker">{{diastolic}} mmHg</view>
+                </picker>
+            </view>
+            <view class="weui-cell">
+                <view class="weui-cell__bd">
+                心率
+                </view>
+                <picker bindchange="bindheartChange" value="{{heart-50}}" range="{{array4}}" >
+                  <view class="picker">{{heart}} 下/分钟</view>
+                </picker>
+            </view>
+        </view>
+        </view>
+
+
+      <view class='page_hd'>  
+      <view class="page__bd page__bd_spacing"> 
+        <view class="weui-cell" >
+            <text>健康状况</text>
+            <text class="data">{{daixie}}</text>
+            <text class='unit'>分</text>
+         </view>          
+         <view class="button-sp-area">
+            <button class="weui-btn" type="primary" size="{{primarySize}}" loading="{{loading}}" plain="true" disabled="{{disabled}}" bindtap="consume">点击测评血压指数</button>        
+         </view>
+
+    </view>
+</view>
+</view>

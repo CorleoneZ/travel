@@ -1,0 +1,5 @@
+page:
+  home
+  login
+  register
+  

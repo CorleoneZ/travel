@@ -1,0 +1,113 @@
+/* pages/login/login.wxss */
+.wrap{
+  position: relative;
+  width: 100%;
+  padding-top: 300rpx;
+}
+.wrap::before{
+  content: '';
+  display: block;
+  height: 500rpx;
+  width: 100%;
+  background-color: #1AAD19; 
+  position: fixed; 
+  z-index: -1;
+  top: 0;
+}
+
+.login-form{
+  border: 1px solid #ddd;
+  background: #fff;
+  margin: 0 20rpx;
+  padding: 40rpx 0;
+}
+
+.controlls{
+  margin: 20rpx;
+}
+.controlls .form-control{
+  border: 1px solid #ddd;
+  height: 80rpx;
+  padding-left: 20rpx;
+  border-radius: 4px;  
+}
+
+.btn-login{
+  margin-top: 50rpx;
+  background: #1AAD19;
+  color: #fff;
+  letter-spacing: 1em; 
+  text-indent: 1em;
+}
+
+button[disabled]:not([type]){
+  background-color: #9ED99D;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.cartoon-brid{
+  position: absolute;
+  transform:translate(-50%,-182rpx);
+  left:50%;
+  margin-bottom: -10px;
+}
+.bird-head{
+  width: 400rpx;
+  height: 200rpx;
+  display: block;
+}
+.bird-hand{
+  width: 68rpx;
+  height: 68rpx;
+  border-radius: 80rpx;
+  background-color: #472d20;
+  transform:scaleY(0.6);
+  position: absolute;
+  left: 10rpx;
+  bottom:-16rpx;
+  transition: 0.3s ease-out;
+}
+.right-hand{
+  left: auto;
+  right: 10rpx;
+}
+
+.arms{
+  top:105rpx;
+  position:absolute;
+  width:100%;
+  height:80rpx;
+  overflow:hidden;
+}
+
+.arm {
+  width:80rpx;
+  height:130rpx;
+  position:absolute;
+  left:20rpx;
+  top:80rpx;
+  transition:0.3s ease-out;
+  transform:rotate(-20deg);
+}
+
+.arm-right{
+  transform:rotate(20deg) scaleX(-1);
+  right:20rpx;
+  left:auto;
+}
+
+.no-see .bird-hand{
+  transform: translateX(100rpx) translateY(-30rpx) scale(0.7);
+}
+
+.no-see .right-hand{
+  transform: translateX(-90rpx) translateY(-30rpx) scale(0.7);
+}
+
+.no-see .arm{
+  transform: translateY(-80rpx) translateX(82rpx);
+}
+
+.no-see .arm-right{
+   transform: translateY(-80rpx) translateX(-72rpx) scaleX(-1);
+}

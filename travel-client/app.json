@@ -1,0 +1,59 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/home/home",
+    "pages/task/task",
+    "pages/search/search",
+    "pages/strategy/strategy",
+    "pages/scenic/scenic",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/self/self",
+    "pages/register/register",
+    "pages/monitor/monitor"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#0aa2e9",
+    "navigationBarTitleText": "旅游宝典",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "black",
+    "selectedColor": "#333",
+    "backgroundColor": "#",
+    "list": [
+      {
+        "iconPath": "images/baseIcon/home.png",
+        "selectedIconPath": "images/baseIcon/home.png",
+        "pagePath": "pages/home/home",
+        "text": "首页"
+      },
+      {
+        "iconPath": "images/baseIcon/data.png",
+        "selectedIconPath": "images/baseIcon/data.png",
+        "pagePath": "pages/task/task",
+        "text": "随机"
+      },
+      {
+        "iconPath": "images/baseIcon/search.png",
+        "selectedIconPath": "images/baseIcon/search.png",
+        "pagePath": "pages/search/search",
+        "text": "搜索"
+      },
+      {
+        "iconPath": "images/baseIcon/share.png",
+        "selectedIconPath": "images/baseIcon/share.png",
+        "pagePath": "pages/strategy/strategy",
+        "text": "旅游攻略"
+      },
+      {
+        "iconPath": "images/baseIcon/my.png",
+        "selectedIconPath": "images/baseIcon/my.png",
+        "pagePath": "pages/self/self",
+        "text": "我的"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

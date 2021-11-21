@@ -1,0 +1,60 @@
+.picker{  
+  padding: 15rpx;  
+  background-color: #FFFFFF;  
+}
+
+/* 头像居中 */
+.page__hd{
+   height: 130px;
+   position: relative;
+}
+.user_img{
+   width:80px;
+   height:80px;
+   border-radius:50%;
+   position: absolute;
+   left: 50%;
+   top: 50%;
+   margin-left: -40px;
+   margin-top: -40px;
+}
+
+.wraper{
+   float: left;
+   position: relative;
+   left: 50%;
+   clear: both;
+}
+
+.user_name{
+   position: relative;
+   left: -50%;
+   white-space: nowrap;
+}
+
+.button-sp-area{
+    margin: 0 auto;
+    padding-top: 15px;
+    width: 60%;
+}
+
+
+.weui-btn{
+   width: 100%;
+}
+
+
+.data{
+  position: relative;
+   color: #cc0000;
+   font-weight: bold;
+   left: 45%;
+}
+
+.unit{
+   position: relative;
+   float: left;
+   left: 48%;
+   color:#777777;
+}
+

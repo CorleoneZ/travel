@@ -1,0 +1,38 @@
+<view class="login">
+  <view class="wrap">
+    <!--卡通鸟  -->
+    <view class="cartoon-brid {{isFocusPasswordInput ? 'no-see' : ''}}">
+      <image class="bird-head" src="../../images/indexs/bird-head.png"></image>
+      <view class="bird-hand"></view>
+      <view class="bird-hand right-hand"></view>
+      <view class="arms">
+          <image class="arm" src="../../images/indexs/bird-arm.png"></image>
+          <image class="arm arm-right" src="../../images/indexs/bird-arm.png"></image>
+      </view>   
+    </view>
+    <view class="login-form">
+      <form bindsubmit="bindsubmit">
+        <view class="weui-cell weui-cell_input">
+              <view class="weui-cell__hd">
+                <view class="weui-label">用户名</view>
+              </view>
+              <view class="weui-cell__bd">
+                <input class="weui-input" placeholder="请输入用户名" name="name"  bindinput="nameInput" value='{{name}}' />
+              </view>
+            </view>
+            <view class="weui-cell weui-cell_input">
+              <view class="weui-cell__hd">
+                <view class="weui-label">密码</view>
+              </view>
+              <view class="weui-cell__bd">
+                <input class="weui-input" type="text" placeholder="请输入密码"  name="pass" password value='{{pass}}'  bindinput="passwordInput"/>
+              </view>
+            </view> 
+        <view class="controlls">
+          <button class="weui-btn" type="primary" bindtap="login">登陆</button>
+          <button class="weui-btn" type="private" bindtap="reg">注册</button>
+        </view>
+      </form>
+    </view>
+  </view>
+</view>

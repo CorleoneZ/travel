@@ -1,0 +1,22 @@
+/* pages/article/article.wxss */
+#header{
+  width: 750rpx;
+  height: 311rpx;
+}
+#header image{
+  width: 100%;
+  height: 100%;
+}
+#photo{
+  padding-bottom: 120rpx;
+}
+
+
+.btn_step{
+  margin: 5rpx 0;
+}
+swiper {
+  width: 100%;
+  height: 500rpx;
+  margin: 30rpx 0;
+}

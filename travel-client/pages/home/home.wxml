@@ -1,0 +1,38 @@
+<!--首页轮播图-->
+  <view>
+    <swiper autoplay circular indicator-dots>
+      <swiper-item>
+        <image src="https://photo69.macsc.com/180710/JPG-180710_1455/Nv3nZ1XkmG_small.jpg" mode="widthFix"></image>
+      </swiper-item>
+      <swiper-item>
+        <image src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZncvpjWsKp1M_BNhWzwA-2VXsH4iHmNrZKw&usqp=CAU" mode="widthFix"></image>
+      </swiper-item>
+      <swiper-item>
+        <image src="http://pic.616pic.com/bg_w1180/00/22/19/4YfV9CCtrc.jpg!/fh/300" mode="widthFix"></image>
+      </swiper-item>
+      <swiper-item>
+        <image src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR59jc1M3rkp1fLkomVRD3pQ2DIeQXuivpQKA&usqp=CAU" mode="widthFix"></image>
+      </swiper-item>
+      <swiper-item>
+        <image src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlSDSNIpwrT_VxfkKCQOWNSzFWkF4tl8mINQ&usqp=CAU" mode="widthFix"></image>
+      </swiper-item>
+    </swiper>
+  </view>
+  
+  <view class="page__hd">
+      <view class="page__title center">热门旅游城市</view>
+
+      <view class="weui-article__p weui-panel__hd" wx:for='{{newsdetail}}'>
+        <view class="page__bd page__bd_spacing">
+              <view class="page__desc center">
+                <view class="page__title">
+                  {{item.Name}}
+                </view>   
+                <view class="page__desc">
+                  {{item.Description}} 
+                </view>  
+              </view>    
+        </view>
+      </view>
+  </view>
+  <!-- 热门城市结束 -->
