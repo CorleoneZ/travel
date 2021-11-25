@@ -1,17 +1,52 @@
-<view class="page__hd">
-      <view class="page__title center">随机城市</view>
+<toubu></toubu>
 
-      <view class="weui-cell__bd">
-          <input type='text' class="weui-input" name="name" value='{{Name}}'/>
+<view class="page__hd">
+    <view class="weui-panel border-shadow">
+      <navigator url="/pages/core/set/today" hover-class="none">
+        <view class="weui-panel__hd">
+          {{theDay}}
+        </view>
+      </navigator>
+      <view class="weui-panel__bd">
+        <view class="weui-media-box weui-media-box_appmsg" >
+          <block>
+            <view class="weui-media-box__hd_in-appmsg">
+              {{day}}
+            </view>
+            <view class="weui-media-box_text">
+              天你已使用，本小程序欢迎您的使用!!!😘😘😘
+            </view>
+          </block>
+        </view>
       </view>
-      <view class="weui-cell__bd">
-          <input type='text' class="weui-input" name="name" value='{{Description}}'/>
-      </view>
-      <view class="weui-cell__bd">
-          <input type='text' class="weui-input" name="name" value='{{Strategy}}'/>
-      </view>
-      
-      <view class="weui-article__p weui-panel__hd" wx:for='{{Scenic}}'>
+    </view>
+  </view>
+
+<!-- random city -->
+<view class="user_content">
+<view class="user_main">
+
+<view class="app_info_item">随机城市</view>
+
+<view class="zhenwen">哈哈你是选择困难户，智能推荐一个你想去的城市</view>
+
+<button class="btn" type="primary" bindtap="inquire">开始随机</button>
+<!--第二部分-->
+<view wx:if="{{statu==1}}"> 
+<view title="tip">随机结果很快出来...</view>
+<view title="tip">看看是那个幸运的城市吧...</view>
+<view title="tip">>>></view>
+</view>
+
+<!-- result: -->
+<view wx:if="{{statu==2}}">
+<view class="app_info_item">结果>>>>>>>>></view>
+<view class="app_info_item">推荐城市: {{city}}</view>
+<view class="app_info_item">介绍: {{des}}</view>
+
+<view class="page__title center">热门景点</view>
+
+      <view class="weui-article__p weui-panel__hd" wx:for='{{list}}'>
         <view class="page__bd page__bd_spacing">
               <view class="page__desc center">
                 <view class="page__title">
@@ -24,7 +59,11 @@
         </view>
       </view>
 
-      <view class="weui-cell__bd">
-          <input type='text' class="weui-input" name="name" value='{{Connection}}'/>
-      </view>
-  </view>
+<view class="app_info_item">相关联城市: {{connection}}</view>
+
+</view>
+</view>
+</view>
+
+  
+

@@ -1,86 +1,102 @@
-var app = getApp();
-// pages/article/article.js
+const app = getApp()
+var util = require('../../utils/util.js');
+// pages/index/index.js
 Page({
- 
-  data: {
-    Scenic: {},
-    Name: "",
-    Description: "",
-    Strategy: "",
-    Connection: "",
-  },
+
   /**
-   * Lifecycle function--Called when page load
+   * 页面的初始数据
    */
-  onLoad: function () {
-    //调用应用实例的方法获取全局数据
-    var that = this;
-    //通过原生调取数据
-    wx.request({ 
-      url: app.getUrl() + '/city/random',
-      method: "GET",
-      header: {
-        "content-type": "application/json"
-      },
-      success: function (res) {
-        var da = res.data.data;
-        that.setData({ "Scenic": da.Scenic });
-        that.setData({ "Name": da.Name});
-        that.setData({ "Description": da.Description});
-        that.setData({ "Strategy": da.Strategy});
-        that.setData({ "Connection": da.Connection});
-        console.log(da);
-      },
-      fail: function (err) {
-        console.log(err)
-      }
-    })
+  data: {
+  theday:"",
+  day:"10",
+  des:"",
+  statu:"",
+  city:"",
+  list:{},
+  strategy:"",
+  connection:"",
   },
 
   /**
-   * Lifecycle function--Called when page is initially rendered
+   * 生命周期函数--监听页面加载
+   */
+  getToday: function () {
+    let day =  util.formatTime(new Date()) ;
+    let theday=day;  
+    console.log(theday);
+    this.setData({
+     theDay:theday
+    })
+  },
+  onLoad: function (options) {
+  this.getToday();
+  },
+  getinformation: function(res){
+    wx.request({
+      url: app.getUrl() + '/city/random',
+      method:"GET",
+      success:(res)=>{
+        console.log(res);
+        this.setData({
+          city:res.data.data.Name,
+          des:res.data.data.Description,
+          strategy:res.data.data.Strategy,
+          statu:2,
+          list:res.data.data.Scenic,
+          connection:res.data.data.Connection
+        })
+      }
+    })
+    },
+    inquire: function(res){
+    this.setData({statu:1});
+    this.getinformation();
+    },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
 
   },
 
   /**
-   * Lifecycle function--Called when page show
+   * 生命周期函数--监听页面显示
    */
   onShow: function () {
 
   },
 
   /**
-   * Lifecycle function--Called when page hide
+   * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
 
   },
 
   /**
-   * Lifecycle function--Called when page unload
+   * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
 
   },
 
   /**
-   * Page event handler function--Called when user drop down
+   * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
 
   },
 
   /**
-   * Called when page reach bottom
+   * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
 
   },
 
   /**
-   * Called when user click on the top right corner to share
+   * 用户点击右上角分享
    */
   onShareAppMessage: function () {
 
