@@ -37,7 +37,8 @@ App({
   },
   globalData: {  
     userInfo: null,
-    city: ''
+    city: '',
+    myurl: 'https://api.binstd.com',
   },
   //返回访问地址
   getUrl: function () {

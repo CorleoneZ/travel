@@ -10,7 +10,9 @@
     "pages/logs/logs",
     "pages/self/self",
     "pages/register/register",
-    "pages/monitor/monitor"
+    "pages/monitor/monitor",
+    "pages/str_detail/str_detail",
+    "pages/weather/weather"
   ],
   "window": {
     "backgroundTextStyle": "light",
