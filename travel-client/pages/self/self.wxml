@@ -39,9 +39,14 @@
                 <view class="weui-cell__bd">
                     <input type='text' class="weui-input" name="hobby"  bindinput="hobbyInput" value='{{hobby}}' placeholder="爱好" />
                 </view>
-              <view class="weui-cell__ft">
-                   
-              </view>
+            </view>
+            <view class="weui-cell weui-cell_input weui-cell_vcode">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">点亮城市</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input type='text' class="weui-input" name="gone_city"  bindinput="gone_cityInput" value='{{gone_city}}' placeholder="已点亮" />
+                </view>
             </view>
           </view>
           

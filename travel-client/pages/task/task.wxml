@@ -59,11 +59,11 @@
         </view>
       </view>
 
+      <view class="weui-btn-area">
+        <button class="weui-btn" type="private" bindtap="light">已经来过，点亮这个城市</button>
+      </view>
 <view class="app_info_item">相关联城市: {{connection}}</view>
 
 </view>
 </view>
 </view>
-
-  
-

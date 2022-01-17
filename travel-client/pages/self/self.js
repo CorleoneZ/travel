@@ -9,9 +9,10 @@ Page({
     email: '',
     title: '',
     hobby:'',
+    gone_city:'',
     sliderLeft: 0
   },
-  onLoad: function () {
+  onLoad: function (res) {
     var that = this;
     console.log("app.globalData.userInfo ： " + app.globalData.userInfo);
     that.setData({
@@ -25,8 +26,19 @@ Page({
     });
     that.setData({
       hobby: app.globalData.userInfo.hobby
+    });
+    wx.request({
+      url: app.getUrl() + 'city/gone/' + this.data.name ,
+      method:"GET",
+      success:(res)=>{
+        console.log("light: " + res.data.data)
+        that.setData({
+          gone_city: res.data.data
+        });
+      }
     })
   },
+
 //用户登录
   todenglu: function () {
     wx.redirectTo({

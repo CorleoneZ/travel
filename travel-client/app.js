@@ -39,6 +39,8 @@ App({
     userInfo: null,
     city: '',
     myurl: 'https://api.binstd.com',
+    //在这里👇写进制数据的appkey
+    appid:'bb4244d760ac9762',
   },
   //返回访问地址
   getUrl: function () {

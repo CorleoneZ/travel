@@ -60,6 +60,7 @@ Page({
             // 可以将 res 发送给后台解码出 unionId
             app.globalData.userInfo = res.data.data;
             console.log("userinfo : " + res.data.data);
+            console.log("globalData: " + app.globalData.userInfo.name);
             wx.showToast({
               title: '登陆成功',
               icon: 'success',

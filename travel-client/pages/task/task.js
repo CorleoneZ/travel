@@ -1,20 +1,34 @@
-const app = getApp()
+var app = getApp();
 var util = require('../../utils/util.js');
 // pages/index/index.js
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
-  theday:"",
-  day:"10",
-  des:"",
-  statu:"",
-  city:"",
-  list:{},
-  strategy:"",
-  connection:"",
+    theday:"",
+    day:"10",
+    des:"",
+    statu:"",
+    city:"",
+    list:{},
+    strategy:"",
+    connection:"",
+    name:''
+  },
+
+  //点亮城市
+  light: function() {
+    var that = this;
+    console.log("app.globalData.userInfo ： " + app.globalData.userInfo);
+    that.setData({
+      name: app.globalData.userInfo.name
+    });
+    wx.request({
+      url: app.getUrl() + 'city/light/' + this.data.name + '/' + this.data.city,
+      method:"POST"                                                                                                    
+    // console.log(this.data);
+    });
   },
 
   /**
@@ -33,7 +47,7 @@ Page({
   },
   getinformation: function(res){
     wx.request({
-      url: app.getUrl() + '/city/random',
+      url: app.getUrl() + 'city/random',
       method:"GET",
       success:(res)=>{
         console.log(res);
