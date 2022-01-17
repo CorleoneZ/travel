@@ -5,18 +5,18 @@ import com.travel.controller.CityController;
 import com.travel.entity.City;
 import com.travel.entity.CityScenic;
 import com.travel.entity.Strategy;
+import com.travel.entity.UserExperience;
 import com.travel.exception.CodeEnum;
 import com.travel.orm.mapper.CityMapper;
 import com.travel.orm.mapper.CityScenicMapper;
 import com.travel.orm.mapper.StrategyMapper;
+import com.travel.orm.mapper.UserExperienceMapper;
 import com.travel.reponse.Result;
 import com.travel.reponse.back.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 @RestController
 @RequestMapping("/v1/city")
@@ -30,6 +30,9 @@ public class CityControllerImpl implements CityController {
 
     @Autowired
     private StrategyMapper strategyMapper;
+
+    @Autowired
+    private UserExperienceMapper userExperienceMapper;
 
     @Override
     @RequestMapping(path = "/pop", method = RequestMethod.GET)
@@ -133,6 +136,34 @@ public class CityControllerImpl implements CityController {
                     .remark(s.getRemark()).build());
         }
         return Result.success(CodeEnum.SUCCESS, cityStrategies);
+    }
+
+    @Override
+    @RequestMapping(path = "/light/{name}/{city}", method = RequestMethod.POST)
+    public void light(@PathVariable String name, @PathVariable String city) {
+        UserExperience experience = UserExperience.builder().username(name).city(city).build();
+        userExperienceMapper.insert(experience);
+        System.out.println(city);
+        System.out.println(name);
+    }
+
+    @Override
+    @RequestMapping(path = "/gone/{name}", method = RequestMethod.GET)
+    public Result goneCity(@PathVariable String name) {
+        List<UserExperience> list = new ArrayList<UserExperience>();
+        Set<UserExperience> set = new HashSet<>();
+        StringBuilder stringBuilder = new StringBuilder();
+        list = userExperienceMapper.selectList(new QueryWrapper<UserExperience>().eq("username",name));
+        for (UserExperience s : list) {
+            set.add(s);
+        }
+
+        for (UserExperience s : set) {
+            stringBuilder.append(s.getCity());
+            stringBuilder.append(" ");
+        }
+        System.out.println(stringBuilder.toString());
+        return Result.success(CodeEnum.SUCCESS,stringBuilder.toString());
     }
 
 }

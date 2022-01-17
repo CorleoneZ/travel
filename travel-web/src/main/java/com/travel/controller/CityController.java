@@ -21,4 +21,10 @@ public interface CityController {
 
     @ApiOperation("推荐城市攻略")
     Result recommend();
+
+    @ApiOperation("点亮城市")
+    void light(String name, String city);
+
+    @ApiOperation("去过的城市")
+    Result goneCity(String name);
 }
