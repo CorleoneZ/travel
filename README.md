@@ -13,14 +13,18 @@
 
 
 ### 使用开发工具：
-前端 微信开发者工具
-后端 idea
-使用语言：JavaScript、java
-使用技能：springboot、mysql、mybatis-plus、druid、lombok、tomcat
+前端: 微信开发者工具
+
+后端: IntelliJ IDEA
+
+使用语言: JavaScript、java、sql
+
+使用技能: SpringBoot、mysql、mybatis-plus、druid、lombok、tomcat、redis
 
 ### 数据库 库表设计：
 * t_user(记录用户信息)
 * t_all_city(所有城市表)
-* t_user_exprience(用户打卡)
+* t_user_experience(用户打卡)
 * t_city_scenic(城市景点)
+* t_city_strategy(旅游城市攻略)
 
