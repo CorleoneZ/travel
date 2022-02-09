@@ -12,7 +12,9 @@
     "pages/register/register",
     "pages/monitor/monitor",
     "pages/str_detail/str_detail",
-    "pages/weather/weather"
+    "pages/weather/weather",
+    "pages/map/map",
+    "pages/details/details"
   ],
   "window": {
     "backgroundTextStyle": "light",

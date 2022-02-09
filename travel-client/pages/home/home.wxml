@@ -2,19 +2,19 @@
   <view>
     <swiper autoplay circular indicator-dots>
       <swiper-item>
-        <image src="https://photo69.macsc.com/180710/JPG-180710_1455/Nv3nZ1XkmG_small.jpg" mode="widthFix"></image>
+        <image src="/images/home/home1.jpeg" mode="widthFix"></image>
       </swiper-item>
       <swiper-item>
-        <image src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZncvpjWsKp1M_BNhWzwA-2VXsH4iHmNrZKw&usqp=CAU" mode="widthFix"></image>
+        <image src="/images/home/home2.jpeg" mode="widthFix"></image>
       </swiper-item>
       <swiper-item>
-        <image src="http://pic.616pic.com/bg_w1180/00/22/19/4YfV9CCtrc.jpg!/fh/300" mode="widthFix"></image>
+        <image src="/images/home/home3.jpeg" mode="widthFix"></image>
       </swiper-item>
       <swiper-item>
-        <image src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR59jc1M3rkp1fLkomVRD3pQ2DIeQXuivpQKA&usqp=CAU" mode="widthFix"></image>
+        <image src="/images/home/home4.jpeg" mode="widthFix"></image>
       </swiper-item>
       <swiper-item>
-        <image src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlSDSNIpwrT_VxfkKCQOWNSzFWkF4tl8mINQ&usqp=CAU" mode="widthFix"></image>
+        <image src="/images/home/home5.jpeg" mode="widthFix"></image>
       </swiper-item>
     </swiper>
   </view>

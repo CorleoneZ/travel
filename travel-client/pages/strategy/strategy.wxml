@@ -1,21 +1,15 @@
-<view class="page">
-  <view class="page__bd">
-    <view class="weui-cells weui-cells_after-title">            
-      <view class="weui-cell weui-cell_input">
-        <view class="weui-cell__hd">
-          <view class="weui-label">城市</view>
-        </view>
-        <view class="weui-cell__bd">
-          <input type='text' class="weui-input" name="name"  bindinput="nameInput" value='{{name}}' placeholder="请输入城市名称" />
-        </view>         
-      </view>
-    </view>
-          
-    <view class="weui-btn-area">
-       <button class="weui-btn" type="private" bindtap="search">搜索</button>
-    </view>
+
+    <!-- map -->
+  <view class="map">
+    <view style="padding-left: 20px;font-weight: 600;font-size: 18px;">{{title}}</view>
+    <image class="openMap" src="/images/baseIcon/map.jpg" bindtap="openMapTap"></image>
   </view>
-</view>
+
+  <!-- 游玩攻略 -->
+  <view class="map" bindtap="openStrategy">
+    <!-- <image class="strategy" src="/img/ly.jpg" mode="aspectFill"></image> -->
+    <view class="strategy">旅 游 攻 略</view>
+  </view>
 
 <view class="view_3">
     <navigator url="/pages/str_detail/str_detail"  class="list-item">
@@ -33,6 +27,20 @@
 
     <view class="line"></view>
 </view>
+    <!-- 打卡点 -->
+    <view class="page__bd page__bd_spacing">
+    <view style="display: flex;align-items: center;margin-left: 15px;margin-top: 10px;margin-bottom: 10px;">
+      <span style="width: 4px;height: 20px;background-image: linear-gradient(to top, #209cff 0%, #68e0cf 100%);border-radius: 10px;"></span>
+      <span style="margin-left: 5px;font-weight: bold;">热门打卡点</span>
+    </view>
+    <view class="weui-flex" wx:for="{{getList}}" wx:key="item" wx:for-item="item" bindtap="onclick" data-id="{{item.id}}">
+      <view class="demo">
+        <view class='item'>
+          <image class="image" src='{{item.image}}' mode="aspectFill"></image> 
+        </view>
+      </view>
+    </view>
+  </view>
 
 <view class="page__hd">
       <view class="page__title center">热门城市旅游攻略</view>

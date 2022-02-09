@@ -1,2 +1,15 @@
 <!--pages/str_detail/str_detail.wxml-->
-<text>pages/str_detail/str_detail.wxml</text>
+
+<view class="app_info_item"></view>
+<button class="btn" type="private" bindtap="inquire">开始搜索</button>
+
+<view wx:if="{{statu==1}}"> 
+<view title="tip">搜索结果马上出来...</view>
+<view title="tip">>>></view>
+</view>
+
+<view wx:if="{{statu==2}}">
+<view class="app_info_item">结果>>>>>>>>></view>
+<view class="app_info_item">推荐城市: {{city}}</view>
+<view class="app_info_item">介绍: {{des}}</view>
+</view>
