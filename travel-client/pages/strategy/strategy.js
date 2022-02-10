@@ -4,7 +4,7 @@ Page({
 
   data: {
     // detailNews:{}
-    title:'珠海',
+    title:'广州',
     articleId:0,
     newsdetail:{},
     newsId:0,

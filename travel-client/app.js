@@ -1,4 +1,6 @@
 //app.js
+const WXAPI = require('apifm-wxapi')
+WXAPI.init('photography')
 App({
   
   onLaunch: function () {

@@ -18,7 +18,30 @@
       </swiper-item>
     </swiper>
   </view>
+
   
+  <view class="classify" wx:for="{{cmsCategories}}" wx:for-item="bigCategory" wx:key="{{bigCategory.id}}" wx:if="{{bigCategory.level == 1}}">
+  <view class="classify-title">{{ bigCategory.name }}
+    <navigator class="view-all" url='/pages/classify/classify?pid={{bigCategory.id}}'>查看全部</navigator>
+  </view>
+  <swiper circular="true" previous-margin="30rpx" duration="300" next-margin="30rpx" class="article-warp">
+    <swiper-item wx:for="{{bigCategory.swiperItems}}" wx:for-item="swiperItem" wx:key="{{index}}">
+      <block wx:for="{{swiperItem}}" wx:for-item="smallCategory">
+        <navigator hover-class="none" class="article-item" url='/pages/classify/classify?pid={{smallCategory.id}}'>
+          <image class="article-clover" src='{{smallCategory.icon}}'></image>
+          <view class="article-info">
+            <text class="article-title">{{smallCategory.name}}</text>
+            <text class="article-description">{{smallCategory.remark}}</text>
+            <view class="article-view">{{smallCategory.key}}</view>
+          </view>
+        </navigator>
+      </block>
+
+    </swiper-item>
+  </swiper>
+  </view>
+
+
   <view class="page__hd">
       <view class="page__title center">热门旅游城市</view>
 
