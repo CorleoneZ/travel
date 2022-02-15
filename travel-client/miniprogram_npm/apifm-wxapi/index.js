@@ -120,6 +120,33 @@ var request = function request(url, needSubDomain, method, data) {
   });
 };
 
+var request2 = function request(url, needSubDomain, method, data) {
+  //var _url = API_BASE_URL + (needSubDomain ? '/' + subDomain : '') + url;
+  return new Promise(function (resolve, reject) {
+    wx.request({
+      url: url,
+      method: method,
+      //data: data,
+      data:{
+        "page": data.page,
+        "categoryId": data.categoryId
+      },
+      header: {
+        'Content-Type': 'application/json'
+      },
+      success: function success(request) {
+        resolve(request.data);
+      },
+      fail: function fail(error) {
+        reject(error);
+      },
+      complete: function complete(aaa) {
+        // 加载完成
+      }
+    });
+  });
+};
+
 /**
  * 小程序的promise没有finally方法，自己扩展下
  */
@@ -673,15 +700,25 @@ module.exports = {
       orderId: orderId
     });
   },
+  //cmsCategories: function cmsCategories() {
+  //  return request('/cms/category/list', true, 'get', {});
+  //},
+
   cmsCategories: function cmsCategories() {
-    return request('/cms/category/list', true, 'get', {});
+    return request2('http://localhost:8080/v1/other/category/list', true, 'get', {});
   },
+  
   cmsCategoryDetail: function cmsCategoryDetail(id) {
     return request('/cms/category/detail', true, 'get', { id: id });
   },
+  //cmsArticles: function cmsArticles(data) {
+  //  return request('/cms/news/list', true, 'post', data);
+  //},
+
   cmsArticles: function cmsArticles(data) {
-    return request('/cms/news/list', true, 'post', data);
+    return request2('http://localhost:8080/v1/other/news/list', true, 'post', data);
   },
+  
   cmsArticleUsefulLogs: function cmsArticleUsefulLogs(data) {
     return request('/cms/news/useful/logs', true, 'post', data);
   },

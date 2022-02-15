@@ -44,7 +44,7 @@ Page({
 
     // 加载所有的分类数据
     const cmsCategories = await WXAPI.cmsCategories();
-    if (cmsCategories.code == 0) {
+    if (cmsCategories.code == 200) {
       const _cmsCategories = cmsCategories.data; // 所有分类数据
       // 筛选推荐的分类
       const cmsRecommendCategories = _cmsCategories.filter(entity => {

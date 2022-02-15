@@ -43,7 +43,7 @@ Page({
       page: this.data.page,
       categoryId: pid
     });
-    if (response.code == 0) {
+    if (response.code == 200) {
       this.setData({
         articleList: this.data.articleList.concat(response.data)
       });
