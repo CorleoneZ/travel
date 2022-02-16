@@ -1,7 +1,26 @@
 <!--pages/str_detail/str_detail.wxml-->
 
-<view class="app_info_item"></view>
-<button class="btn" type="private" bindtap="inquire">开始搜索</button>
+<view class="page__hd">
+    <view class="page__title center">搜索相关城市攻略</view>
+</view>
+<view class="zhenwen">选择你想去的城市</view>
+<view class="page">
+  <view class="page__bd">
+    <view class="weui-cells weui-cells_after-title">            
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">城市</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input type='text' class="weui-input" name="name"  bindinput="nameInput" value='{{name}}' placeholder="请输入城市名称" />
+        </view>         
+      </view>
+    </view>
+    <view class="weui-btn-area">
+       <button class="weui-btn" type="private" bindtap="inquire">搜索</button>
+    </view>      
+  </view>
+</view>
 
 <view wx:if="{{statu==1}}"> 
 <view title="tip">搜索结果马上出来...</view>
@@ -10,6 +29,8 @@
 
 <view wx:if="{{statu==2}}">
 <view class="app_info_item">结果>>>>>>>>></view>
-<view class="app_info_item">推荐城市: {{city}}</view>
-<view class="app_info_item">介绍: {{des}}</view>
+<view class="app_info_item">推荐城市: {{cityName}}</view>
+<view class="app_info_item">攻略: {{strategy}}</view>
+<view class="app_info_item">美食: {{foods}}</view>
+<view class="app_info_item">其他: {{remark}}</view>
 </view>

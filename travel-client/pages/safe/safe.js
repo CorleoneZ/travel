@@ -1,19 +1,15 @@
-// pages/str_detail/str_detail.js
-var app = getApp();
+// pages/strategy/strategy.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    statu:"",
-    list:{},
-    strategy:"",
-    connection:"",
-    cityName: "",
-    foods: "",
-    remark: "",
-    title: "",
+    myVideo:[
+      {
+        url:'https://baikevideo.cdn.bcebos.com/media/mda-XcHMVGwqTr85eado/d19e7d544bb406a4dcb88470a3ac717c.mp4'
+      }
+    ]
   },
 
   /**
@@ -22,32 +18,6 @@ Page({
   onLoad: function (options) {
 
   },
-  nameInput: function (e) {
-    this.setData({
-      cityName: e.detail.value
-    })
-  },
-  getinformation: function(res){
-    var that = this;
-    wx.request({
-      url: app.getUrl() + 'city/strategy/' + that.data.cityName,
-      method:"GET",
-      success:(res)=>{
-        console.log(res);
-        this.setData({
-          strategy:res.data.data.Strategy,
-          statu:2,
-          foods:res.data.data.foods,
-          remark:res.data.data.remark,
-          title:res.data.data.title
-        })
-      }
-    })
-    },
-    inquire: function(res){
-      this.setData({statu:1});
-      this.getinformation();
-    },
 
   /**
    * 生命周期函数--监听页面初次渲染完成

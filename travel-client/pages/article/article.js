@@ -20,7 +20,7 @@ Page({
     const articleId = options.id;
     // 读取文章详情信息
     const articleDetail = await WXAPI.cmsArticleDetail(articleId);
-    if (articleDetail.code != 0) {
+    if (articleDetail.code != 200) {
       wx.showModal({
         title: '提示',
         content: '当前文章不存在',

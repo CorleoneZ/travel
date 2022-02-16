@@ -1,6 +1,7 @@
 package com.travel.controller;
 
 import com.travel.reponse.Result;
+import com.travel.reponse.form.ArticleForm;
 import com.travel.reponse.form.CategoryForm;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -15,5 +16,5 @@ public interface OtherInterface {
     Result cmsArticles(CategoryForm categoryForm);
 
     @ApiOperation("读取文章内容")
-    Result cmsDetail(int articleId);
+    Result cmsDetail(ArticleForm articleId);
 }

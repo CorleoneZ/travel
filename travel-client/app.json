@@ -15,7 +15,9 @@
     "pages/weather/weather",
     "pages/map/map",
     "pages/details/details",
-    "pages/classify/classify"
+    "pages/classify/classify",
+    "pages/article/article",
+    "pages/safe/safe"
   ],
   "window": {
     "backgroundTextStyle": "light",

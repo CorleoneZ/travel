@@ -126,11 +126,11 @@ var request2 = function request(url, needSubDomain, method, data) {
     wx.request({
       url: url,
       method: method,
-      //data: data,
-      data:{
-        "page": data.page,
-        "categoryId": data.categoryId
-      },
+      data: data,
+      //data:{
+      //  "page": data.page,
+      //  "categoryId": data.categoryId
+      //},
       header: {
         'Content-Type': 'application/json'
       },
@@ -722,9 +722,14 @@ module.exports = {
   cmsArticleUsefulLogs: function cmsArticleUsefulLogs(data) {
     return request('/cms/news/useful/logs', true, 'post', data);
   },
+  //cmsArticleDetail: function cmsArticleDetail(id) {
+  //  return request('/cms/news/detail', true, 'get', { id: id });
+  //},
+
   cmsArticleDetail: function cmsArticleDetail(id) {
-    return request('/cms/news/detail', true, 'get', { id: id });
+    return request2('http://localhost:8080/v1/other/category/article', true, 'post', { id: id });
   },
+
   cmsArticlePreNext: function cmsArticlePreNext(id) {
     return request('/cms/news/preNext', true, 'get', { id: id });
   },

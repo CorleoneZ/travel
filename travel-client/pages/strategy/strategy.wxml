@@ -8,7 +8,7 @@
   <!-- 游玩攻略 -->
   <view class="map" bindtap="openStrategy">
     <!-- <image class="strategy" src="/img/ly.jpg" mode="aspectFill"></image> -->
-    <view class="strategy">旅 游 攻 略</view>
+    <view class="strategy">旅 游 安 全 提 示</view>
   </view>
 
 <view class="view_3">

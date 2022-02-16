@@ -9,17 +9,16 @@ import java.util.List;
 @Service
 public class ArticleService {
 
-    private List<Article> articleLists;
     private Article article;
 
-    public void initArticle() {
-        HomeCateInit.init();
+    public List<Article> initArticle() {
+        return HomeCateInit.init();
     }
 
-    public Article getArticle(int id) {
+    public Article getArticle(String id, List<Article> articleList) {
 
-        for (Article s : articleLists) {
-            if (id == 0) {
+        for (Article s : articleList) {
+            if (id.equals(s.getId())) {
                 article = s;
             }
         }

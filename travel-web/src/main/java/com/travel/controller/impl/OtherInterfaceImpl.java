@@ -6,8 +6,10 @@ import com.travel.reponse.Result;
 import com.travel.reponse.back.Article;
 import com.travel.reponse.back.CmsArticles;
 import com.travel.reponse.back.CmsCategories;
+import com.travel.reponse.form.ArticleForm;
 import com.travel.reponse.form.CategoryForm;
 import com.travel.service.ArticleService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -20,10 +22,12 @@ import java.util.List;
 @RequestMapping("/v1/other")
 public class OtherInterfaceImpl implements OtherInterface {
 
+    @Autowired
+    private ArticleService articleService;
+
     private List<CmsCategories> cmsCategories;
     private List<CmsArticles> cmsArticles;
     private List<CmsArticles> resA;
-    private ArticleService articleService;
 
     @Override
     @RequestMapping(path = "/category/list", method = RequestMethod.GET)
@@ -66,10 +70,10 @@ public class OtherInterfaceImpl implements OtherInterface {
         cmsArticles.add(CmsArticles.builder().categoryId(5711).commentNumber(110).dateAdd("2019-10-17 10:31:18").dateUpdate("2022-02-12 23:25:02").descript("义乌新光辉街拍").hasTourJourney(false).id(18164)
                 .isDraft(false).isRecommend(false).keywords("街拍，义乌").numberFav(0).paixu(0).pic("https://dcdn.it120.cc/2019/10/17/e4b804b8-594d-4be0-a8be-954e8880f134.jpeg").status(2).statusStr("审核通过")
                 .title("义乌新光汇").uid(0).unusefulNumber(0).usefulNumber(0).userId(7709).views(337).build());*/
-        cmsArticles.add(CmsArticles.builder().categoryId(5712).commentNumber(109).dateAdd("2019-11-10 14:05:32").dateUpdate("2022-02-15 13:31:09").descript("亚洲").hasTourJourney(false).id(19994)
+        cmsArticles.add(CmsArticles.builder().categoryId(5712).commentNumber(109).dateAdd("2019-11-10 14:05:32").dateUpdate("2022-02-15 13:31:09").descript("四季皆宜，北海道").hasTourJourney(false).id(19994)
                 .isDraft(false).isRecommend(false).keywords("亚洲").numberFav(0).paixu(0).pic("http://p1-q.mafengwo.net/s17/M00/D0/D1/CoUBXl_rB26ATff_AAD09ufK4TQ70.jpeg?imageMogr2%2Fthumbnail%2F%21413x233r%2Fgravity%2FCenter%2Fcrop%2F%21413x233%2Fquality%2F100").status(2).statusStr("审核通过")
                 .title("日本").uid(0).unusefulNumber(0).usefulNumber(0).userId(7709).views(645).build());
-        cmsArticles.add(CmsArticles.builder().categoryId(5713).commentNumber(157).dateAdd("2019-10-17 10:58:02").dateUpdate("2022-02-15 13:31:09").descript("海岛").hasTourJourney(false).id(18170)
+        cmsArticles.add(CmsArticles.builder().categoryId(5713).commentNumber(157).dateAdd("2019-10-17 10:58:02").dateUpdate("2022-02-15 13:31:09").descript("11月-次年4月最佳").hasTourJourney(false).id(18170)
                 .isDraft(false).isRecommend(true).keywords("海岛").numberFav(0).paixu(0).pic("http://p1-q.mafengwo.net/s16/M00/F6/14/CoUBUl_rB0aAcu2rAAH0oaDx5_g07.jpeg?imageMogr2%2Fthumbnail%2F%21413x233r%2Fgravity%2FCenter%2Fcrop%2F%21413x233%2Fquality%2F100").status(2).statusStr("审核通过")
                 .title("吉普岛").uid(0).unusefulNumber(0).usefulNumber(0).userId(7709).views(2036).build());
 
@@ -80,7 +84,7 @@ public class OtherInterfaceImpl implements OtherInterface {
         cmsArticles.add(CmsArticles.builder().categoryId(5715).commentNumber(7).dateAdd("2021-04-24 18:49:17").dateUpdate("2022-02-15 16:27:45").descript("新疆 这个美好的名词").hasTourJourney(false).id(71244)
                 .isDraft(false).isRecommend(true).keywords("Decorative").numberFav(0).paixu(0).pic("http://note.mafengwo.net/img/aa/48/cd476d8ddbfb7a8d5815d472033e77d4.jpeg?imageMogr2%2Fthumbnail%2F%21440x300r%2Fstrip%2Fgravity%2FCenter%2Fcrop%2F%21440x300%2Fquality%2F90").status(2).statusStr("审核通过")
                 .title("无尽风光在新疆").uid(0).unusefulNumber(0).usefulNumber(0).userId(7709).views(105).build());
-        cmsArticles.add(CmsArticles.builder().categoryId(5716).commentNumber(29).dateAdd("2021-04-24 19:05:21").dateUpdate("2022-02-15 16:27:45").descript("巡游在世界的尽头").hasTourJourney(false).id(71245)
+        cmsArticles.add(CmsArticles.builder().categoryId(5716).commentNumber(29).dateAdd("2021-04-24 19:05:21").dateUpdate("2022-02-15 16:27:45").descript("巡游在世界的尽头").hasTourJourney(false).id(71247)
                 .isDraft(false).isRecommend(true).keywords("Land").numberFav(0).paixu(0).pic("http://note.mafengwo.net/img/8a/38/889489a71064fa0e0485f0946c6604d9.jpeg?imageMogr2%2Fthumbnail%2F%21440x300r%2Fstrip%2Fgravity%2FCenter%2Fcrop%2F%21440x300%2Fquality%2F90").status(2).statusStr("审核通过")
                 .title("南极日记").uid(0).unusefulNumber(0).usefulNumber(0).userId(7709).views(405).build());
         /*cmsArticles.add(CmsArticles.builder().categoryId(5714).commentNumber(29).dateAdd("2021-04-24 19:05:21").dateUpdate("2022-02-15 16:27:45").descript("蓝牙耳机拍摄").hasTourJourney(false).id(71245)
@@ -117,9 +121,10 @@ public class OtherInterfaceImpl implements OtherInterface {
     }
 
     @Override
-    public Result cmsDetail(int articleId) {
-        articleService.initArticle();
-        Article article = articleService.getArticle(articleId);
+    @RequestMapping(path = "/category/article", method = RequestMethod.POST)
+    public Result cmsDetail(@RequestBody ArticleForm articleForm) {
+        List<Article> articleList = articleService.initArticle();
+        Article article = articleService.getArticle(articleForm.getId(), articleList);
         return Result.success(CodeEnum.SUCCESS, article);
     }
 }

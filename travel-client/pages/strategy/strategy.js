@@ -59,7 +59,7 @@ Page({
     // 跳转☞游玩攻略
     openStrategy:function(){
       wx.navigateTo({
-        url: '/pages/strategy/strategy'
+        url: '/pages/safe/safe'
       })
       // wx.showToast({
       //   title: '暂无数据',
