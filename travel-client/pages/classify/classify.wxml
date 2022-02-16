@@ -6,7 +6,7 @@
         <text class="title">{{item.title}}</text>
         <text class="description">{{item.descript}}</text>
         <view class="views">
-          <image src='../../assets/icons/views_gray.png'></image>{{item.views}}</view>
+          <image src='../../images/icons/views_gray.png'></image>{{item.views}}</view>
       </view>
     </navigator>
   </view>

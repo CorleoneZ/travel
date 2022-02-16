@@ -13,4 +13,7 @@ public interface OtherInterface {
 
     @ApiOperation("读取分类下的文章")
     Result cmsArticles(CategoryForm categoryForm);
+
+    @ApiOperation("读取文章内容")
+    Result cmsDetail(int articleId);
 }

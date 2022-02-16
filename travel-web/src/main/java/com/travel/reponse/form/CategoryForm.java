@@ -20,6 +20,5 @@ public class CategoryForm {
     private int page;
 
     @JsonProperty("categoryId")
-    @NotNull
     private int categoryId;
 }

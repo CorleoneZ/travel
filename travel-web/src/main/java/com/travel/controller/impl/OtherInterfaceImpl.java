@@ -3,9 +3,11 @@ package com.travel.controller.impl;
 import com.travel.controller.OtherInterface;
 import com.travel.exception.CodeEnum;
 import com.travel.reponse.Result;
+import com.travel.reponse.back.Article;
 import com.travel.reponse.back.CmsArticles;
 import com.travel.reponse.back.CmsCategories;
 import com.travel.reponse.form.CategoryForm;
+import com.travel.service.ArticleService;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -21,6 +23,7 @@ public class OtherInterfaceImpl implements OtherInterface {
     private List<CmsCategories> cmsCategories;
     private List<CmsArticles> cmsArticles;
     private List<CmsArticles> resA;
+    private ArticleService articleService;
 
     @Override
     @RequestMapping(path = "/category/list", method = RequestMethod.GET)
@@ -44,6 +47,7 @@ public class OtherInterfaceImpl implements OtherInterface {
     public Result cmsArticles(@RequestBody CategoryForm categoryForm) {
         cmsArticles = new ArrayList<>();
         resA = new ArrayList<>();
+        int cateId = categoryForm.getCategoryId();
         cmsArticles.add(CmsArticles.builder().categoryId(5711).commentNumber(158).dateAdd("2019-10-17 10:56:38").dateUpdate("2022-02-15 19:22:33").descript("四季皆宜，夏秋最佳").hasTourJourney(false).id(18168)
                 .isDraft(false).isRecommend(true).keywords("国内").numberFav(0).paixu(0).pic("http://p1-q.mafengwo.net/s16/M00/CB/38/CoUBUl_ax2iAJDppAAFeX7CeYNQ76.jpeg?imageMogr2%2Fthumbnail%2F%21413x233r%2Fgravity%2FCenter%2Fcrop%2F%21413x233%2Fquality%2F100").status(2).statusStr("审核通过")
                 .title("呼伦贝尔").uid(0).unusefulNumber(0).usefulNumber(1).userId(7709).views(2532).build());
@@ -70,16 +74,16 @@ public class OtherInterfaceImpl implements OtherInterface {
                 .title("吉普岛").uid(0).unusefulNumber(0).usefulNumber(0).userId(7709).views(2036).build());
 
 
-        cmsArticles.add(CmsArticles.builder().categoryId(5714).commentNumber(29).dateAdd("2021-04-24 19:05:21").dateUpdate("2022-02-15 16:27:45").descript("蓝牙耳机拍摄").hasTourJourney(false).id(71245)
-                .isDraft(false).isRecommend(true).keywords("蓝牙耳机拍摄").numberFav(0).paixu(0).pic("https://dcdn.it120.cc/2021/04/24/c32258e6-74bd-49f4-b309-753f0f6e3c70.jpg").status(2).statusStr("审核通过")
-                .title("蓝牙耳机拍摄").uid(0).unusefulNumber(0).usefulNumber(0).userId(7709).views(768).build());
-        cmsArticles.add(CmsArticles.builder().categoryId(5714).commentNumber(7).dateAdd("2021-04-24 18:49:17").dateUpdate("2022-02-15 16:27:45").descript("车载吸尘器外拍").hasTourJourney(false).id(71244)
-                .isDraft(false).isRecommend(true).keywords("车载七晨起外拍").numberFav(0).paixu(0).pic("https://dcdn.it120.cc/2021/04/24/267b5a1d-1ca2-4783-ba99-8ae4bf4e3fdc.jpg").status(2).statusStr("审核通过")
-                .title("蓝牙耳机拍摄").uid(0).unusefulNumber(0).usefulNumber(0).userId(7709).views(405).build());
-/*        cmsArticles.add(CmsArticles.builder().categoryId(5714).commentNumber(29).dateAdd("2021-04-24 19:05:21").dateUpdate("2022-02-15 16:27:45").descript("蓝牙耳机拍摄").hasTourJourney(false).id(71245)
-                .isDraft(false).isRecommend(true).keywords("蓝牙耳机拍摄").numberFav(0).paixu(0).pic("https://dcdn.it120.cc/2021/04/24/c32258e6-74bd-49f4-b309-753f0f6e3c70.jpg").status(2).statusStr("审核通过")
-                .title("蓝牙耳机拍摄").uid(0).unusefulNumber(0).usefulNumber(0).userId(7709).views(405).build());
-        cmsArticles.add(CmsArticles.builder().categoryId(5714).commentNumber(29).dateAdd("2021-04-24 19:05:21").dateUpdate("2022-02-15 16:27:45").descript("蓝牙耳机拍摄").hasTourJourney(false).id(71245)
+        cmsArticles.add(CmsArticles.builder().categoryId(5714).commentNumber(29).dateAdd("2021-04-24 19:05:21").dateUpdate("2022-02-15 16:27:45").descript("在纯白的世界说一句：我爱你").hasTourJourney(false).id(71245)
+                .isDraft(false).isRecommend(true).keywords("Love").numberFav(0).paixu(0).pic("http://note.mafengwo.net/mfs/s19/M00/7C/ED/CoNHvGH2KzhKRcOPAAtNKPDX4jQ.jpg?imageMogr2%2Fthumbnail%2F%21440x300r%2Fstrip%2Fgravity%2FCenter%2Fcrop%2F%21440x300%2Fquality%2F90").status(2).statusStr("审核通过")
+                .title("2000公里逐雪").uid(0).unusefulNumber(0).usefulNumber(0).userId(7709).views(768).build());
+        cmsArticles.add(CmsArticles.builder().categoryId(5715).commentNumber(7).dateAdd("2021-04-24 18:49:17").dateUpdate("2022-02-15 16:27:45").descript("新疆 这个美好的名词").hasTourJourney(false).id(71244)
+                .isDraft(false).isRecommend(true).keywords("Decorative").numberFav(0).paixu(0).pic("http://note.mafengwo.net/img/aa/48/cd476d8ddbfb7a8d5815d472033e77d4.jpeg?imageMogr2%2Fthumbnail%2F%21440x300r%2Fstrip%2Fgravity%2FCenter%2Fcrop%2F%21440x300%2Fquality%2F90").status(2).statusStr("审核通过")
+                .title("无尽风光在新疆").uid(0).unusefulNumber(0).usefulNumber(0).userId(7709).views(105).build());
+        cmsArticles.add(CmsArticles.builder().categoryId(5716).commentNumber(29).dateAdd("2021-04-24 19:05:21").dateUpdate("2022-02-15 16:27:45").descript("巡游在世界的尽头").hasTourJourney(false).id(71245)
+                .isDraft(false).isRecommend(true).keywords("Land").numberFav(0).paixu(0).pic("http://note.mafengwo.net/img/8a/38/889489a71064fa0e0485f0946c6604d9.jpeg?imageMogr2%2Fthumbnail%2F%21440x300r%2Fstrip%2Fgravity%2FCenter%2Fcrop%2F%21440x300%2Fquality%2F90").status(2).statusStr("审核通过")
+                .title("南极日记").uid(0).unusefulNumber(0).usefulNumber(0).userId(7709).views(405).build());
+        /*cmsArticles.add(CmsArticles.builder().categoryId(5714).commentNumber(29).dateAdd("2021-04-24 19:05:21").dateUpdate("2022-02-15 16:27:45").descript("蓝牙耳机拍摄").hasTourJourney(false).id(71245)
                 .isDraft(false).isRecommend(true).keywords("蓝牙耳机拍摄").numberFav(0).paixu(0).pic("https://dcdn.it120.cc/2021/04/24/c32258e6-74bd-49f4-b309-753f0f6e3c70.jpg").status(2).statusStr("审核通过")
                 .title("蓝牙耳机拍摄").uid(0).unusefulNumber(0).usefulNumber(0).userId(7709).views(768).build());
         cmsArticles.add(CmsArticles.builder().categoryId(5714).commentNumber(29).dateAdd("2021-04-24 19:05:21").dateUpdate("2022-02-15 16:27:45").descript("蓝牙耳机拍摄").hasTourJourney(false).id(71245)
@@ -88,12 +92,34 @@ public class OtherInterfaceImpl implements OtherInterface {
         cmsArticles.add(CmsArticles.builder().categoryId(5714).commentNumber(29).dateAdd("2021-04-24 19:05:21").dateUpdate("2022-02-15 16:27:45").descript("蓝牙耳机拍摄").hasTourJourney(false).id(71245)
                 .isDraft(false).isRecommend(true).keywords("蓝牙耳机拍摄").numberFav(0).paixu(0).pic("https://dcdn.it120.cc/2021/04/24/c32258e6-74bd-49f4-b309-753f0f6e3c70.jpg").status(2).statusStr("审核通过")
                 .title("蓝牙耳机拍摄").uid(0).unusefulNumber(0).usefulNumber(0).userId(7709).views(768).build());*/
-        for (CmsArticles s : cmsArticles) {
-            if (s.getCategoryId() == categoryForm.getCategoryId()) {
-                resA.add(s);
+
+        if (cateId == 5709) {
+            for (CmsArticles s : cmsArticles) {
+                if (s.getCategoryId() == 5711 || s.getCategoryId() == 5712 || s.getCategoryId() == 5713) {
+                    resA.add(s);
+                }
+            }
+        } else if (cateId == 5710) {
+            for (CmsArticles s : cmsArticles) {
+                if (s.getCategoryId() == 5714 || s.getCategoryId() == 5715 || s.getCategoryId() == 5716) {
+                    resA.add(s);
+                }
+            }
+        } else {
+            for (CmsArticles s : cmsArticles) {
+                if (s.getCategoryId() == categoryForm.getCategoryId()) {
+                    resA.add(s);
+                }
             }
         }
 
         return Result.success(CodeEnum.SUCCESS, resA);
+    }
+
+    @Override
+    public Result cmsDetail(int articleId) {
+        articleService.initArticle();
+        Article article = articleService.getArticle(articleId);
+        return Result.success(CodeEnum.SUCCESS, article);
     }
 }
